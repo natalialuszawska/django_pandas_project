@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wykresy Spotify</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #33333C;
+            color: #fff;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #fff;
+            text-align: center;
+        }
+        h3 {
+            color: #fff;
+            border-bottom: 2px solid #33333C;
+            padding-bottom: 10px;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .section ul li {
+            margin: 5px 0;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #91979A;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Dane Spotify</h1>
+        <div class="section">
+            <h3>Najpopularniejsze piosenki dla poszczególnych lat</h3>
+            <ul>
+                <li><a href="{% url 'chart_view' 2023 'top10' %}">Wskaźniki dla poszczególnych piosenek roku 2023</a></li>
+                <li><a href="{% url 'chart_view' 2022 'top10' %}">Wskaźniki dla poszczególnych piosenek roku 2022</a></li>
+                <li><a href="{% url 'chart_view' 2021 'top10' %}">Wskaźniki dla poszczególnych piosenek roku 2021</a></li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3>Najpopularniejsze piosenki w playlistach dla poszczególnych lat</h3>
+            <ul>
+                <li><a href="{% url 'chart_view' 2023 'playlists' %}">Wykres 2023</a></li>
+                <li><a href="{% url 'chart_view' 2022 'playlists' %}">Wykres 2022</a></li>
+                <li><a href="{% url 'chart_view' 2021 'playlists' %}">Wykres 2021</a></li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3>Średnia i mediana rónych cech muzycznych dla wybranych lat</h3>
+            <p><a href="{% url 'create_chart_for_mean_and_meadian'%}">Wykres</a></p>
+        </div>
+    </div>
+</body>
+</html>
